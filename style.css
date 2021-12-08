@@ -1,3 +1,21 @@
 body {
 	background-color: blue;
 }
+
+.letter-grid {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.letter-topGrid {
+	display: flex;
+	align-self: flex-start;
+	flex-direction: column;
+}
+
+.letter-bottomGrid {
+	display: flex;
+	align-self: flex-end;
+	flex-direction: column;
+}
