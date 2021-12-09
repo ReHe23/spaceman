@@ -1,0 +1,11 @@
+Pick a random word
+player clicks on a letter as their first guess
+check that player's guess is correct or wrong
+    - if correct, display on board
+    - if wrong, strikeout letter and take away piece of balloons
+keep track of letters the player has guessed
+show the player the progress with how many tries are left
+quit the game if player wants to
+reset the game if player wants to
+finish when player has guessed the word before tries run out
+lose when player has used all tries 

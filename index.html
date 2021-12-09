@@ -10,17 +10,19 @@
 <body>
     <div>
         <h1>Help Mr. Fredricksen</h1>
-        <div class="tries-left">Tries Left: <span id="triesLeft">9</span> </div>
-        <img class="balloonImage" src="https://i.imgur.com/zBpd26Q.png" alt="Up House with full balloons">
+        <div class="triesLeft triesLeftBoard">Tries Left: 9 </div>
     </div>
-
+    
     <div class="game-container">
-        <p id="wordGuess">the word/phase to be guessed</p>
+        <img class="balloonImage" src="assets/9-tries-left.png" alt="Up House with full balloons">
+        <div class="wordGuess">
+            
+        </div>
         <p class="category">
         Category: <span id="shown-category">Object</span>
         </p>
 
-        <div class="letter-grid">
+        <div class="letter-topGrid">
             <div class="letters" id="letter-topGrid">A</div>
             <div class="letters" id="letter-topGrid">B</div>
             <div class="letters" id="letter-topGrid">C</div>
@@ -34,7 +36,9 @@
             <div class="letters" id="letter-topGrid">K</div>
             <div class="letters" id="letter-topGrid">L</div>
             <div class="letters" id="letter-topGrid">M</div>
+        </div>
 
+        <div class="letter-bottomGrid">
             <div class="letters" id="letter-bottomGrid">N</div>
             <div class="letters" id="letter-bottomGrid">O</div>
             <div class="letters" id="letter-bottomGrid">P</div>
