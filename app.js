@@ -34,6 +34,10 @@ const upHouse = [
 	'assets/7-tries-left.png',
 	'assets/6-tries-left.png',
 	'assets/5-tries-left.png',
+	'assets/4-tries-left.png',
+	'assets/3-tries-left.png',
+	'assets/2-tries-left.png',
+	'assets/1-tries-left.png',
 ];
 
 //?FUNCTIONS
@@ -59,6 +63,7 @@ randomWord();
 // display dashes on screen
 function dashes(word) {
 	let array = word.split('');
+
 	let howManySpaces = [];
 	array.forEach((element, index) => {
 		if (element === ' ') {
@@ -112,6 +117,9 @@ function compareLetters(word, selectedLetter, clickedBox) {
 	} else {
 		clickedBox.classList.add('incorrect');
 		triesLeft--;
+		let levels = 9 - triesLeft;
+		let image = upHouse[levels];
+		ballonImage.setAttribute('src', image);
 		//need to add where image goes to next photo in array
 		// update triesleft scoreboard
 	}
