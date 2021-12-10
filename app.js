@@ -12,13 +12,13 @@ const wordGuess = document.querySelector('.wordGuess');
 
 //?VARIABLES
 let wordGuessBank = [
-	'Fredricksen',
-	'Charles',
-	'Russell',
-	'Kevin',
-	'Ellie',
-	'Dug',
-	'Squirrel',
+	'FREDRICKSON',
+	'CHARLES',
+	'RUSSEL',
+	'KEVIN',
+	'ELLIE',
+	'DUG',
+	'SQUIRRIEL',
 ];
 
 let answer = ''; // current word that has been selected
