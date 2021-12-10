@@ -13,17 +13,11 @@ img {
 	height: auto;
 }
 
-.wordGuess {
-	display: flex;
-	flex-direction: row;
-}
 
 .letter-topGrid,
 .letter-bottomGrid {
-	width: 50px;
 	display: flex;
 	flex: row;
-	justify-content: center;
 }
 
 .letters {
@@ -32,17 +26,36 @@ img {
 	margin: 2px;
 	height: 3vh;
 	padding: 10px;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
+.clicked {
+	background-color: aqua;
+	border: 1px solid red;
+}
+
+.wordGuess {
+	display: flex;
+	flex-direction: row;
+	
+}
+.incorrect {
+	background-color: darkviolet;
+
+}
 .dashes {
-	width: 50px;
-	height: 50px;
+	width: 60px;
+	height: 60px;
 	background-color: red;
 	border: 2px;
 	margin: 5px;
 	color: cornflowerblue;
-}
-
-.incorrect {
-	background-color: darkviolet;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
 }

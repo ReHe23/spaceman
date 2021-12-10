@@ -21,7 +21,7 @@ let wordGuessBank = [
 	'SQUIRRIEL',
 ];
 
-let answer = ''; // current word that has been selected
+let answer; // current word that has been selected
 let guessed = []; // add element to array with correct letter to see if word has "won"
 let wordLength; // need to compare with guessed length and wordLength
 let unusedWordArray = wordGuessBank; // use all words and take word off that is used from bank
@@ -38,6 +38,7 @@ const upHouse = [
 	'assets/3-tries-left.png',
 	'assets/2-tries-left.png',
 	'assets/1-tries-left.png',
+	'assets/just the house.png',
 ];
 
 //?FUNCTIONS
@@ -82,29 +83,10 @@ function dashes(word) {
 
 dashes(answer);
 
-// // // check win
-// function checkGameWon() {
-// 	if ((currentWord = answer)) {
-// 		document.getElementById('letters').innerHTML = 'You Won!!!';
-// 	}
-// }
-// // // check lose
-// function checkGameLost() {
-// 	if (triesLeft === 0) {
-// 		document.getElementById('wordGuess').innerHTML =
-// 			'The answer was: ' + answer;
-// 		document.getElementById('letters').innerHTML = 'You Lost!!!';
-// 	}
-// }
-
 // reset board with new word
-
-//?EVENT LISTENERS
 
 //function to show hint modal
 // and close modal
-
-// Click on a letter
 
 function compareLetters(word, selectedLetter, clickedBox) {
 	if (word.includes(selectedLetter)) {
@@ -120,15 +102,13 @@ function compareLetters(word, selectedLetter, clickedBox) {
 		let levels = 9 - triesLeft;
 		let image = upHouse[levels];
 		ballonImage.setAttribute('src', image);
-		//need to add where image goes to next photo in array
-		// update triesleft scoreboard
+		triesLeftBoard.innerText = `Chances Left: 0${triesLeft}`;
 	}
 	return triesLeft;
 }
 
 letters.addEventListener('click', (event) => {
 	event.preventDefault();
-
 	if (event.target.classList.contains('clicked')) {
 		return;
 	} else if (event.target.classList.contains('letters')) {
@@ -136,7 +116,25 @@ letters.addEventListener('click', (event) => {
 		let clickedBox = event.target;
 		compareLetters(answer, selectedLetter, clickedBox);
 		event.target.classList.add('clicked');
-		// checkGameWon();
-		// checkGameLost();
+		checkGameWon();
 	}
 });
+
+// // check win
+function checkGameWon() {
+	console.log(guessed);
+	if (guessed.length === answer.length) {
+		console.log('testing won');
+		// document.getElementById('letters').innerHTML = 'You Won!!!';
+	} else if (triesLeft === 0) {
+		console.log('LOSE');
+	}
+}
+// // // check lose
+// function checkGameLost() {
+// 	if (triesLeft === 0) {
+// 		document.getElementById('wordGuess').innerHTML =
+// 			'The answer was: ' + answer;
+// 		document.getElementById('letters').innerHTML = 'You Lost!!!';
+// 	}
+// }
