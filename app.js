@@ -1,5 +1,3 @@
-console.log('javascript working 1!');
-
 //Each letter in alphabet
 
 //? DOM ELEMENTS
@@ -7,19 +5,18 @@ const hintBtn = document.querySelector('.hint');
 const resetBtn = document.querySelector('.reset');
 const quitBtn = document.querySelector('.quit');
 
-const letters = document.querySelector('.letter-grid');
+const letters = document.querySelector('.letters');
 const ballonImage = document.querySelector('.balloonImage');
 const triesLeftBoard = document.querySelector('.triesLeftBoard');
 const wordGuess = document.querySelector('.wordGuess');
 
 //?VARIABLES
 let wordGuessBank = [
-	'Carl Fredricksen',
-	'Charles Muntz',
+	'Fredricksen',
+	'Charles',
 	'Russell',
 	'Kevin',
-	'Ellie Fredricksen',
-	'Beta and Gamma',
+	'Ellie',
 	'Dug',
 	'Squirrel',
 ];
@@ -29,6 +26,15 @@ let guessed = [];
 let triesLeft = 9;
 let wordLength;
 let unusedWordArray = wordGuessBank;
+
+//? DECONSTRUCTING BALLOON
+const upHouse = [
+	'assets/9-tries-left.png',
+	'assets/8-tries-left.png',
+	'assets/7-tries-left.png',
+	'assets/6-tries-left.png',
+	'assets/5-tries-left.png',
+];
 
 //?FUNCTIONS
 function init() {
@@ -71,33 +77,57 @@ function dashes(answer) {
 
 dashes(answer);
 
-//compare selected letter with corret letter
-//* IF correct guess
-// need to loop to check each letter and return its index
-
-//! ELSE incorrect guess
-// add class to turn letter to different color
-// show image of how many tries left
-// update tries left number
-
-// // check win
+// // // check win
 // function checkGameWon() {
 // 	if ((currentWord = answer)) {
 // 		document.getElementById('letters').innerHTML = 'You Won!!!';
 // 	}
 // }
-// // check lose
+// // // check lose
 // function checkGameLost() {
-// 	if (mistakes === triesLeft) {
+// 	if (triesLeft === 0) {
 // 		document.getElementById('wordGuess').innerHTML =
 // 			'The answer was: ' + answer;
 // 		document.getElementById('letters').innerHTML = 'You Lost!!!';
 // 	}
 // }
-// update score
+
 // reset board with new word
 
 //?EVENT LISTENERS
 
 //function to show hint modal
 // and close modal
+
+// Click on a letter
+letters.addEventListener('click', (event) => {
+	event.preventDefault();
+
+	if (event.target.classList.contains('clicked')) {
+		return;
+	} else if (event.target.classList.contains('letters')) {
+		let letterText = event.target.innerText;
+		let clickedBox = event.target;
+		compareLetters(answer, letterText, clickedBox);
+		event.target.classList.add('clicked');
+		// checkGameWon();
+		// checkGameLost();
+	}
+});
+
+function compareLetters(answer, selectedLetter, clickedBox) {
+	if (answer.includes(selectedLetter)) {
+		const emptyBox = document.querySelectorAll(`.${selectedLetter}`);
+		for (let i = 0; i < emptyBox.length; i++) {
+			emptyBox[i].innerText = selectedLetter;
+			guessed.push('1');
+		}
+		//need to loop to check each letter and give index
+	} else {
+		clickedBox.classList.add('incorrect');
+		triesLeft--;
+		//need to add where image goes to next photo in array
+		// update triesleft scoreboard
+	}
+	return triesLeft;
+}
