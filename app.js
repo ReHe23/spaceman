@@ -5,7 +5,7 @@ const hintBtn = document.querySelector('.hint');
 const resetBtn = document.querySelector('.reset');
 const quitBtn = document.querySelector('.quit');
 
-const letters = document.querySelector('.letters');
+const letters = document.querySelector('.game-container');
 const ballonImage = document.querySelector('.balloonImage');
 const triesLeftBoard = document.querySelector('.triesLeftBoard');
 const wordGuess = document.querySelector('.wordGuess');
@@ -21,11 +21,11 @@ let wordGuessBank = [
 	'Squirrel',
 ];
 
-let answer = '';
-let guessed = [];
+let answer = ''; // current word that has been selected
+let guessed = []; // add element to array with correct letter to see if word has "won"
+let wordLength; // need to compare with guessed length and wordLength
+let unusedWordArray = wordGuessBank; // use all words and take word off that is used from bank
 let triesLeft = 9;
-let wordLength;
-let unusedWordArray = wordGuessBank;
 
 //? DECONSTRUCTING BALLOON
 const upHouse = [
@@ -57,8 +57,8 @@ function randomWord() {
 randomWord();
 
 // display dashes on screen
-function dashes(answer) {
-	let array = answer.split('');
+function dashes(word) {
+	let array = word.split('');
 	let howManySpaces = [];
 	array.forEach((element, index) => {
 		if (element === ' ') {
@@ -100,23 +100,9 @@ dashes(answer);
 // and close modal
 
 // Click on a letter
-letters.addEventListener('click', (event) => {
-	event.preventDefault();
 
-	if (event.target.classList.contains('clicked')) {
-		return;
-	} else if (event.target.classList.contains('letters')) {
-		let letterText = event.target.innerText;
-		let clickedBox = event.target;
-		compareLetters(answer, letterText, clickedBox);
-		event.target.classList.add('clicked');
-		// checkGameWon();
-		// checkGameLost();
-	}
-});
-
-function compareLetters(answer, selectedLetter, clickedBox) {
-	if (answer.includes(selectedLetter)) {
+function compareLetters(word, selectedLetter, clickedBox) {
+	if (word.includes(selectedLetter)) {
 		const emptyBox = document.querySelectorAll(`.${selectedLetter}`);
 		for (let i = 0; i < emptyBox.length; i++) {
 			emptyBox[i].innerText = selectedLetter;
@@ -131,3 +117,18 @@ function compareLetters(answer, selectedLetter, clickedBox) {
 	}
 	return triesLeft;
 }
+
+letters.addEventListener('click', (event) => {
+	event.preventDefault();
+
+	if (event.target.classList.contains('clicked')) {
+		return;
+	} else if (event.target.classList.contains('letters')) {
+		let selectedLetter = event.target.innerText;
+		let clickedBox = event.target;
+		compareLetters(answer, selectedLetter, clickedBox);
+		event.target.classList.add('clicked');
+		// checkGameWon();
+		// checkGameLost();
+	}
+});
