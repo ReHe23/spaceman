@@ -5,23 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Helping Mr.Fredricksen</title>
+    <title>Helping Mr.Fredricksen!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div>
-        <h1>Help Mr. Fredricksen</h1>
+    <h1>Help Mr. Fredricksen</h1>
+    <div class="rightflex">
         <div class="triesLeft triesLeftBoard">Tries Left: 9 </div>
+        <button class="hint">Hint</button>
     </div>
     
-    <div class="game-container">
-        <img class="balloonImage" src="assets/9-tries-left.png" alt="Up House with full balloons">
+    <div id="winGameModal" class="modal">
+        <div class="winModalContent">
+                <h1>YOU'VE WON</h1>
+        </div>
+
+    </div>
+
+    <div class="gameContainer">
+        <div class="imageContainer">
+            <img class="balloonImage" src="assets/9-tries-left.png" alt="Up House with full balloons">
+        </div>
+        <br>
         <div class="wordGuess">
             
         </div>
-        <p class="category">
+        <!-- <p class="category">
         Category: <span id="shown-category">Object</span>
-        </p>
-
+        </p> -->
+<p></p>
         <div class="letter-topGrid">
             <div class="letters" id="letter-topGrid">A</div>
             <div class="letters" id="letter-topGrid">B</div>
@@ -54,8 +66,7 @@
             <div class="letters" id="letter-bottomGrid">Z</div>
         </div>
 
-        <div class="bottom-container">
-            <button class="hint">Hint</button>
+        <div class="bottomContainer">
             <button class="reset">Play Again</button>
             <button class="quit">Quit</button>
         </div>

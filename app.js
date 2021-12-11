@@ -5,10 +5,12 @@ const hintBtn = document.querySelector('.hint');
 const resetBtn = document.querySelector('.reset');
 const quitBtn = document.querySelector('.quit');
 
-const letters = document.querySelector('.game-container');
+const letters = document.querySelector('.gameContainer');
 const ballonImage = document.querySelector('.balloonImage');
 const triesLeftBoard = document.querySelector('.triesLeftBoard');
 const wordGuess = document.querySelector('.wordGuess');
+
+const winModal = document.getElementById('winGameModal');
 
 //?VARIABLES
 let wordGuessBank = [
@@ -64,7 +66,6 @@ randomWord();
 // display dashes on screen
 function dashes(word) {
 	let array = word.split('');
-
 	let howManySpaces = [];
 	array.forEach((element, index) => {
 		if (element === ' ') {
@@ -124,17 +125,16 @@ letters.addEventListener('click', (event) => {
 function checkGameWon() {
 	console.log(guessed);
 	if (guessed.length === answer.length) {
+		winGameModal();
 		console.log('testing won');
-		// document.getElementById('letters').innerHTML = 'You Won!!!';
 	} else if (triesLeft === 0) {
 		console.log('LOSE');
 	}
 }
-// // // check lose
-// function checkGameLost() {
-// 	if (triesLeft === 0) {
-// 		document.getElementById('wordGuess').innerHTML =
-// 			'The answer was: ' + answer;
-// 		document.getElementById('letters').innerHTML = 'You Lost!!!';
-// 	}
-// }
+
+const winGameModal = () => {
+	winModal.style.display = 'block';
+};
+// replayButton.addEventListener('click', () => {
+// 	winModal.style.display = 'none';
+// });
