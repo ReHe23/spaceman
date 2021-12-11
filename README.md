@@ -15,7 +15,6 @@ A game where the object is for one player to guess the letters of an unknown wor
 As a user, I want a browser-based interface so that I can play the game.
 As a user, I want the ability to restart the game.
 As a user, I want the ability to start new game.
-As a user, I want 2 win conditions, Win, Lose.
 As a user, I want the game to display what letters are left to be picked.
 As a user, I want the game to display the balloons being popped after each try.
 As a user, I want the game to display what category the word is.
@@ -24,6 +23,7 @@ As a user, I want the game to display what category the word is.
 
 #### Bronze
 
+As a user, I want 2 win conditions, Win, Lose.
 As a user, I want to track how many tries I have left.
 As a user, I want the ability to pick a category of what the word will be.
 As a user, I want a hint option.
