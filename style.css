@@ -24,7 +24,7 @@ body h1 {
 	align-items: center;
 }
 img {
-	width: 50%;
+	width: 35%;
 	height: auto;
 }
 
@@ -76,19 +76,28 @@ img {
 	background-color: black;
 	position: fixed;
 	bottom: 10%;
-	z-index: 1;
 	display: none;
 	width: 100%;
 	height: 40%;
+	display: flex, none;
+	direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .winModalContent {
-	background-color: deeppink;
-	color: dodgerblue;
-	border: 1px solid green;
-	border-radius: 2px;
+	border-radius: 10px;
 	padding: 20px;
-	margin: 15% auto;
+	margin: 150px auto;
+	line-height: 130%;
+	height: 200px;
+	width: 550px;
+	/* border: solid cyan; */
+}
+
+.loseModalContent {
+	border-radius: 10px;
+	padding: 20px;
 }
 
 .rightflex {
@@ -105,4 +114,42 @@ img {
 
 .bottomContainer {
 	padding-top: 10px;
+}
+
+.playAgainBtn {
+	position: center;
+	background-image: linear-gradient(
+		92.88deg,
+		#455eb5 9.16%,
+		#5643cc 43.89%,
+		#673fd7 64.72%
+	);
+	border-radius: 8px;
+	border-style: none;
+	font-size: 1.5em;
+	color: white;
+	font-weight: 500;
+	height: 3rem;
+	padding: 0 1.6rem;
+	text-align: center;
+	font-family: 'Nerko One', cursive;
+}
+
+.resetBtn {
+	position: center;
+	background-image: linear-gradient(
+		92.88deg,
+		#455eb5 9.16%,
+		#5643cc 43.89%,
+		#673fd7 64.72%
+	);
+	border-radius: 8px;
+	border-style: none;
+	font-size: 1.5em;
+	color: white;
+	font-weight: 500;
+	height: 3rem;
+	padding: 0 1.6rem;
+	text-align: center;
+	font-family: 'Nerko One', cursive;
 }

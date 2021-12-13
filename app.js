@@ -11,16 +11,21 @@ const triesLeftBoard = document.querySelector('.triesLeftBoard');
 const wordGuess = document.querySelector('.wordGuess');
 
 const winModal = document.getElementById('winGameModal');
+const loseModal = document.getElementById('loseGameModal');
+const playAgainBtn = document.querySelector('.playAgainBtn');
 
 //?VARIABLES
 let wordGuessBank = [
-	'FREDRICKSON',
+	'FREDRICKSEN',
 	'CHARLES',
 	'RUSSEL',
 	'KEVIN',
 	'ELLIE',
 	'DUG',
 	'SQUIRRIEL',
+	'BALLOON',
+	'ADVENTURE',
+	'SCRAPBOOK',
 ];
 
 let answer; // current word that has been selected
@@ -63,7 +68,6 @@ function randomWord() {
 }
 randomWord();
 
-// display dashes on screen
 function dashes(word) {
 	let array = word.split('');
 	let howManySpaces = [];
@@ -83,11 +87,6 @@ function dashes(word) {
 }
 
 dashes(answer);
-
-// reset board with new word
-
-//function to show hint modal
-// and close modal
 
 function compareLetters(word, selectedLetter, clickedBox) {
 	if (word.includes(selectedLetter)) {
@@ -121,7 +120,6 @@ letters.addEventListener('click', (event) => {
 	}
 });
 
-// // check win
 function checkGameWon() {
 	console.log(guessed);
 	if (guessed.length === answer.length) {
@@ -129,12 +127,34 @@ function checkGameWon() {
 		console.log('testing won');
 	} else if (triesLeft === 0) {
 		console.log('LOSE');
+		loseGameModal();
 	}
 }
 
 const winGameModal = () => {
 	winModal.style.display = 'block';
 };
-// replayButton.addEventListener('click', () => {
-// 	winModal.style.display = 'none';
-// });
+const loseGameModal = () => {
+	loseModal.style.display = 'block';
+};
+
+// playAgainBtn.addEventListener('click', location.reload());
+
+// function resetGame() {
+// 	let clickedLetters = document.querySelectorAll('.clicked');
+// 	for (let i = 0; i < clickedLetters.length; i++) {
+// 		clickedLetters[i].classList.remove('clicked');
+// 	}
+// 	let wrongLetters = document.querySelectorAll('.incorrect');
+// 	for (let i = 0; i < wrongLetters.length; i++) {
+// 		wrongLetters[i].classList.remove('incorrect');
+// 	}
+
+// 	guessed = [];
+// 	upHouse.setAttribute('src', '');
+// 	triesLeft = 9;
+// 	triesLeftBoard.innerText = `Chances Left: 0${triesLeft}`;
+
+// 	randomWord();
+// 	dashes(currentWord);
+// }

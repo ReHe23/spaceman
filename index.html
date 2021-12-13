@@ -12,14 +12,20 @@
     <h1>Help Mr. Fredricksen</h1>
     <div class="rightflex">
         <div class="triesLeft triesLeftBoard">Tries Left: 9 </div>
-        <button class="hint">Hint</button>
+        <!-- <button class="hint">Hint</button> -->
     </div>
     
     <div id="winGameModal" class="modal">
         <div class="winModalContent">
                 <h1>YOU'VE WON</h1>
+                <button onCLick="window.location.reload()" class="playAgainBtn">Play Again!</button>
         </div>
-
+    </div>
+    <div id="loseGameModal" class="modal">
+        <div class="loseModalContent">
+            <h1>SORRY, YOU'VE LOST!</h1>
+            <button onCLick="window.location.reload()" class="playAgainBtn">Try Again!</button>
+        </div>
     </div>
 
     <div class="gameContainer">
@@ -67,10 +73,13 @@
         </div>
 
         <div class="bottomContainer">
-            <button class="reset">Play Again</button>
-            <button class="quit">Quit</button>
+            <button onCLick="window.location.reload()" class="resetBtn">Play Again</button>
+            <!-- <button class="quit">Quit</button> -->
         </div>
     </div>
     <script src="app.js"></script>
 </body>
 </html>
+
+
+<!-- REFRESH/RESET: https://stackoverflow.com/questions/29884654/button-that-refreshes-the-page-on-click -->
