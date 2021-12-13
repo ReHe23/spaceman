@@ -36,12 +36,12 @@ img {
 
 .letters {
 	background-color: rgb(119, 48, 140);
-	border: 6px solid rgb(80, 104, 192);
+	border: 5px solid rgb(80, 104, 192);
 	margin: 2px;
 	height: 3vh;
-	padding: 10px;
-	width: 30px;
-	height: 30px;
+	padding: 6px;
+	width: 25px;
+	height: 25px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -61,10 +61,10 @@ img {
 	background-color: rgb(200, 25, 23);
 }
 .dashes {
-	width: 60px;
-	height: 60px;
+	width: 50px;
+	height: 50px;
 	background-color: rgb(80, 104, 192);
-	margin: 5px;
+	margin: 2px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -88,16 +88,41 @@ img {
 .winModalContent {
 	border-radius: 10px;
 	padding: 20px;
-	margin: 150px auto;
-	line-height: 130%;
-	height: 200px;
-	width: 550px;
-	/* border: solid cyan; */
+	display: flex;
+	margin: 10px auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
-
+.modalCarlHappy > .carlHappy {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.carlHappy {
+	width: 55%;
+	height: auto;
+}
 .loseModalContent {
 	border-radius: 10px;
 	padding: 20px;
+	display: flex;
+	margin: 10px auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.modalCarlFrustrated > .carlFrustrated {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.carlFrustrated {
+	width: 70%;
+	height: auto;
 }
 
 .rightflex {
@@ -130,9 +155,10 @@ img {
 	color: white;
 	font-weight: 500;
 	height: 3rem;
-	padding: 0 1.6rem;
+	padding: 1rem auto;
 	text-align: center;
 	font-family: 'Nerko One', cursive;
+	margin-top: 10px;
 }
 
 .resetBtn {
@@ -153,3 +179,6 @@ img {
 	text-align: center;
 	font-family: 'Nerko One', cursive;
 }
+
+/* Color gradient - https://www.w3schools.com/css/css3_gradients.asp */
+/* Getting gif in modal to be centered - https://stackoverflow.com/questions/29334416/bootstrap-modal-dialog-center-image-in-body/50288959 */

@@ -17,14 +17,28 @@
     
     <div id="winGameModal" class="modal">
         <div class="winModalContent">
-                <h1>YOU'VE WON</h1>
-                <button onCLick="window.location.reload()" class="playAgainBtn">Play Again!</button>
+               <div>
+                   <h1>YOU'VE WON</h1>
+               </div> 
+               <div class = "modalCarlHappy">
+                   <img class="carlHappy" src="assets/happyCarl.gif" alt="Happy Carl">
+               </div>
+               <div>
+                   <button onCLick="window.location.reload()" class="playAgainBtn">Play Again!</button>
+               </div>
         </div>
     </div>
     <div id="loseGameModal" class="modal">
         <div class="loseModalContent">
-            <h1>SORRY, YOU'VE LOST!</h1>
-            <button onCLick="window.location.reload()" class="playAgainBtn">Try Again!</button>
+           <div>
+               <h1>SORRY, YOU'VE LOST!</h1>
+           </div> 
+           <div class="modalCarlFrustrated">
+               <img class="carlFrustrated" src="assets/Carl.gif" alt="Frustrated Carl">
+           </div>
+            <div>
+                <button onCLick="window.location.reload()" class="playAgainBtn">Try Again!</button>
+            </div> 
         </div>
     </div>
 
