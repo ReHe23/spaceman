@@ -101,7 +101,7 @@ img {
 	margin-right: auto;
 }
 .carlHappy {
-	width: 55%;
+	width: 60%;
 	height: auto;
 }
 .loseModalContent {
@@ -121,7 +121,7 @@ img {
 	margin-right: auto;
 }
 .carlFrustrated {
-	width: 70%;
+	width: 75%;
 	height: auto;
 }
 
@@ -158,7 +158,7 @@ img {
 	padding: 1rem auto;
 	text-align: center;
 	font-family: 'Nerko One', cursive;
-	margin-top: 10px;
+	margin-top: 15px;
 }
 
 .resetBtn {
