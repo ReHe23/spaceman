@@ -18,8 +18,14 @@
     <div id="winGameModal" class="modal">
         <div class="winModalContent">
                 <h1>YOU'VE WON</h1>
+                <button onCLick="window.location.reload()" class="playAgainBtn">Play Again!</button>
         </div>
-
+    </div>
+    <div id="loseGameModal" class="modal">
+        <div class="loseModalContent">
+            <h1>SORRY, YOU'VE LOST!</h1>
+            <button onCLick="window.location.reload()" class="playAgainBtn">Try Again!</button>
+        </div>
     </div>
 
     <div class="gameContainer">
@@ -67,8 +73,8 @@
         </div>
 
         <div class="bottomContainer">
-            <button class="reset">Play Again</button>
-            <button class="quit">Quit</button>
+            <button onCLick="window.location.reload()" class="resetBtn">Play Again</button>
+            <!-- <button class="quit">Quit</button> -->
         </div>
     </div>
     <script src="app.js"></script>
